@@ -1,9 +1,10 @@
-import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '@radix-ui/themes/styles.css';
 import RecoilRootWrapper from '@components/RecoilWrapper';
 import ThemeProvider from '@components/ThemeProvider';
+import StyledComponentsRegistry from '@lib/registy';
+import GlobalStyles from '@components/GlobalStyles';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,9 +21,12 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={inter.className}>
-        <RecoilRootWrapper>
-          <ThemeProvider>{children}</ThemeProvider>
-        </RecoilRootWrapper>
+        <StyledComponentsRegistry>
+          <RecoilRootWrapper>
+            <ThemeProvider>{children}</ThemeProvider>
+            <GlobalStyles />
+          </RecoilRootWrapper>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );

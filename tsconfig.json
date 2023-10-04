@@ -20,7 +20,8 @@
     ],
     "paths": {
       "@components/*": ["./src/components/*"],
-      "@recoil/*": ["./src/core/recoil/*"]
+      "@recoil/*": ["./src/core/recoil/*"],
+      "@lib/*": ["./src/core/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
